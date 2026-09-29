@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ShopBack Lens — reviewer board</title>
+  <meta name="description" content="12-month product proposal for ShopBack. Review the deck, prototype, impact model and PRD in one place.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect fill='%23FF4E17' width='64' height='64' rx='14'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="rail">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>ShopBack Lens<br><small>Reviewer board · 12 months</small></div>
+    </div>
+    <nav class="nav">
+      <a href="#overview" data-page="overview" class="active">Overview</a>
+      <a href="#deck" data-page="deck">Deck · 17 slides</a>
+      <a href="#prototype" data-page="prototype">Prototype</a>
+      <a href="#model" data-page="model">Live model</a>
+      <a href="#prd" data-page="prd">PRD</a>
+    </nav>
+    <div class="rail-foot">
+      <b>Wang Zhiming (王至明)</b><br>
+      Singapore first · 29 Sep 2026<br>
+      Numbers are assumptions, not a forecast.
+    </div>
+  </aside>
+
+  <main class="main">
+    <section id="overview" class="page on">
+      <div class="kicker">Product proposal · 12-month horizon</div>
+      <h1>The cheapest incremental GMV is demand ShopBack already influences but fails to capture.</h1>
+      <p class="lede">ShopBack already has an answer engine. What it does not have is an intercept for a product seen in TikTok, Instagram or WhatsApp. Lens is that intercept. Smart Rates is how merchants buy verified incrementality without cutting anyone’s published rate.</p>
+      <div class="row" style="margin-bottom:22px">
+        <div class="stat"><b>S$1.26M</b><span>SG month-12 net revenue run-rate (base case)</span></div>
+        <div class="stat"><b>S$4.0M</b><span>M12 exit run-rate including MY + TW</span></div>
+        <div class="stat"><b>+S$1.57</b><span>North star: incremental GMV per MAU / month</span></div>
+        <div class="stat"><b>Holdout</b><span>10% of SG users never get Lens. Impact is read off that.</span></div>
+      </div>
+      <div class="grid-2" style="margin-bottom:22px">
+        <div class="card">
+          <h3>How to review · about 12 minutes</h3>
+          <ol class="path">
+            <li><span class="n">01</span><span><b>Deck</b> — the primary argument. Arrow keys to move.</span></li>
+            <li><span class="n">02</span><span><b>Prototype</b> — share-sheet capture, failure states, merchant console.</span></li>
+            <li><span class="n">03</span><span><b>Live model</b> — change any orange input; the funnel recalculates.</span></li>
+            <li><span class="n">04</span><span><b>PRD</b> — full scope, assumptions with kill conditions, risks.</span></li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3>The four questions</h3>
+          <p><b>What.</b> Social-first deal seekers in SG. Share a TikTok link or screenshot; get True Net Price; one-tap tracked checkout.</p>
+          <p><b>Why this.</b> Capture problem, not a demand problem — and the gap in the live AI stack.</p>
+          <p><b>Assumptions.</b> Every number is tagged [A-n] with a test and a kill condition. I do not have internal data.</p>
+          <p style="margin-bottom:0"><b>Impact.</b> Recover leaked GMV, Watch-driven repurchase, 71 bps platform fee on participating GMV.</p>
+        </div>
+      </div>
+      <div class="note" style="margin-bottom:22px">
+        <b>What already exists.</b> AI Assistant, Search by Photo, Smart Alerts, Travel Planner and the ChatGPT app all answer once the user is inside ShopBack. Lens is Share → ShopBack from the app they are already in. Ask and Watch are components of that surface, not a rebuild.
+      </div>
+      <div class="downloads">
+        <a class="btn" href="#deck">Open the deck</a>
+        <a class="btn ghost" href="files/02_ShopBack_Lens_Deck.pptx">Download PPTX</a>
+        <a class="btn ghost" href="files/03_Impact_Model.xlsx">Download Excel</a>
+        <a class="btn ghost" href="files/01_PRD_ShopBack_Lens.pdf">Download PRD PDF</a>
+      </div>
+    </section>
+
+    <section id="deck" class="page deck-wrap">
+      <div class="kicker">Primary submission</div>
+      <h1 style="font-size:26px">17-slide deck</h1>
+      <p class="lede">Use ← → or the buttons. This is the same argument as the PPTX, rebuilt for the browser so you do not have to download anything.</p>
+      <div class="stage-wrap">
+        <div id="stage" class="stage dark"></div>
+        <div class="deck-bar">
+          <button type="button" id="prev">← Prev</button>
+          <button type="button" id="next">Next →</button>
+          <span id="counter">01 / 17</span>
+          <span id="slide-title"></span>
+          <div class="dots" id="dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prototype" class="page" style="max-width:none">
+      <div class="kicker">Working file</div>
+      <h1 style="font-size:26px">Clickable prototype · 12 frames</h1>
+      <p class="lede">Click a frame, then use arrow keys inside the prototype. Happy path, low-confidence, “already the best price”, Watch alert, and the merchant console are all here.</p>
+      <div class="proto-frame">
+        <iframe src="prototype.html" title="ShopBack Lens prototype"></iframe>
+      </div>
+    </section>
+
+    <section id="model" class="page">
+      <div class="kicker">Impact model · live</div>
+      <h1 style="font-size:26px">Change an assumption. Watch the business case move.</h1>
+      <p class="lede">Orange cells are inputs. Everything else is arithmetic. This is the same model as the spreadsheet — including retention lift, so totals match the deck at S$1.26M base.</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Assumptions</h3>
+          <div class="grid-2" id="inputs"></div>
+          <p style="margin:14px 0 0;font-size:12.5px">Kill conditions live in the PRD. A-1 below 30%, A-4 below 55%, or A-8 below 25% stops the project.</p>
+        </div>
+        <div class="card">
+          <h3>Singapore, month-12 run-rate</h3>
+          <ul class="funnel" id="funnel"></ul>
+          <div style="margin-top:16px" class="grid-2">
+            <div><div class="big" id="rev"></div><span>Combined SG net revenue</span></div>
+            <div><div class="big" id="exit"></div><span>M12 exit incl. MY+TW</span></div>
+          </div>
+          <p style="margin:12px 0 0;font-size:12.5px" id="year1"></p>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:14px" id="scenarios"></div>
+    </section>
+
+    <section id="prd" class="page">
+      <div class="kicker">Appendix</div>
+      <h1 style="font-size:26px">PRD</h1>
+      <p class="lede">Full argument, scope, economics, assumptions with kill conditions, roadmap and risks. Also available as a PDF download.</p>
+      <article class="prd" id="prd-body"></article>
+    </section>
+  </main>
+  <script src="slides.js"></script>
+  <script src="prd.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
